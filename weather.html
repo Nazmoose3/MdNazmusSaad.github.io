@@ -1,0 +1,108 @@
+<!-- project1.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Include necessary meta tags and CSS links -->
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Project 1 Details - Md Nazmus Saad Portfolio</title>
+
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+  <link rel="stylesheet" href="weather.css">
+
+  <!-- Custom CSS for background animations -->
+  <style>
+      canvas {
+          position: fixed;
+          top: 0;
+          left: 0;
+          z-index: -1; /* Place the canvas behind other elements */
+      }
+  </style>
+</head>
+  <body>
+    <!-- Background Canvas for Animations -->
+    <canvas id="particleCanvas"></canvas>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+        <a class="navbar-brand" href="#">Toronto's Weather Web App</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ml-auto">
+                <!-- <li class="nav-item"><a class="nav-link" href="#header">Home</a></li> -->
+                <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+            </ul>
+        </div>
+    </nav>
+
+      <!-- Inside the <body> section of your HTML file -->
+      <div class="project">
+
+          <div class="slideshow">
+              <img src="WeatherApp1.jpg" alt="Project Image 1" class="active">
+              <img src="WeatherApp2.jpg" alt="Project Image 2">
+              <img src="WeatherApp3.jpg" alt="Project Image 3">
+          </div>
+
+          <div class="caption-container">
+              <p class="caption active">Shows the current weather in Toronto.</p>
+              <p class="caption">The weather for the week.</p>
+              <p class="caption">Weather Maps</p>
+          </div>
+      </div>
+
+  </div>
+    <p>
+  This is a web app that uses flask and the OpenWeatherMap API to show Toronto's weather.<br><br>
+  What it does and how I made it:<br>
+  The Toronto's Weather Web App (TWWA) was made using the Flask framework. It displays Toronto's current weather, weather for the next 7 days, weather maps of the world, and national weather alerts. It uses the OpenWeatherMap API to get the data about Toronto's weather.
+  <br><br>
+  Why I chose to make it:<br>
+  I chose to make the TWWA because I wanted to get more practice with the Flask framework, using APIs, and I felt it would also be pretty useful.</p>
+
+    <script src="script.js"></script>
+
+    <script>
+      // Wrap the code inside a function called startSlideshow
+      function startSlideshow() {
+        // Get the slideshow container and images
+        const slideshow = document.querySelector('.slideshow');
+        if (slideshow) {
+          const images = slideshow.querySelectorAll('img');
+          // Set the initial index and show the first image and caption
+          let index = 0;
+          images[index].classList.add('active');
+          const captions = document.querySelectorAll('.caption');
+          captions[index].classList.add('active');
+
+          // Set an interval to cycle through the images and captions
+          setInterval(() => {
+            images[index].classList.remove('active');
+            captions[index].classList.remove('active');
+            index = (index + 1) % images.length;
+            images[index].classList.add('active');
+            captions[index].classList.add('active');
+          }, 3000);
+
+          // Add event listeners to the captions to show the corresponding image
+          captions.forEach((caption, i) => {
+            caption.addEventListener('click', () => {
+              images[index].classList.remove('active');
+              captions[index].classList.remove('active');
+              index = i;
+              images[index].classList.add('active');
+              captions[index].classList.add('active');
+            });
+          });
+        }
+      }
+
+      // Call startSlideshow when the DOM is loaded
+      document.addEventListener('DOMContentLoaded', startSlideshow);
+
+    </script>
+  </body>
+  </html>

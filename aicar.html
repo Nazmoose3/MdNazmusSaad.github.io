@@ -1,0 +1,103 @@
+<!-- project1.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Include necessary meta tags and CSS links -->
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Project 2 Details - Md Nazmus Saad Portfolio</title>
+
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+  <link rel="stylesheet" href="weather.css">
+
+  <!-- Custom CSS for background animations -->
+  <style>
+      canvas {
+          position: fixed;
+          top: 0;
+          left: 0;
+          z-index: -1; /* Place the canvas behind other elements */
+      }
+  </style>
+</head>
+  <body>
+    <!-- Background Canvas for Animations -->
+    <canvas id="particleCanvas"></canvas>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+        <a class="navbar-brand" href="#">ML Car Visualizer</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ml-auto">
+                <!-- <li class="nav-item"><a class="nav-link" href="#header">Home</a></li> -->
+                <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+            </ul>
+        </div>
+    </nav>
+
+      <!-- Inside the <body> section of your HTML file -->
+      <div class="project">
+
+          <div class="slideshow">
+              <img src="AiCarVisualizer1.png" alt="Project Image 1" class="active">
+              <img src="AiCarVisualizer3.png" alt="Project Image 2">
+              <img src="AiCarVisualizer4.png" alt="Project Image 3">
+          </div>
+
+          <div class="caption-container">
+              <p class="caption active">Test 100s of self-driving car models in parallel.</p>
+              <p class="caption">Statistics of the best model are shown.</p>
+              <p class="caption">Sensors detect traffic and road boarders and send information to the neural network. A visual of the neural network of the leading car in the simulation is shown.</p>
+          </div>
+      </div>
+
+  </div>
+    <p>
+      AI/ML self-driving car model that uses a neural network and sensors to navigate through trafic. The biases and weights of the neural network are randomly generated which is why parallelizing the testing of 100s of models is necessary. 
+
+    <script src="script.js"></script>
+
+    <script>
+      // Wrap the code inside a function called startSlideshow
+      function startSlideshow() {
+        // Get the slideshow container and images
+        const slideshow = document.querySelector('.slideshow');
+        if (slideshow) {
+          const images = slideshow.querySelectorAll('img');
+          // Set the initial index and show the first image and caption
+          let index = 0;
+          images[index].classList.add('active');
+          const captions = document.querySelectorAll('.caption');
+          captions[index].classList.add('active');
+
+          // Set an interval to cycle through the images and captions
+          setInterval(() => {
+            images[index].classList.remove('active');
+            captions[index].classList.remove('active');
+            index = (index + 1) % images.length;
+            images[index].classList.add('active');
+            captions[index].classList.add('active');
+          }, 3000);
+
+          // Add event listeners to the captions to show the corresponding image
+          captions.forEach((caption, i) => {
+            caption.addEventListener('click', () => {
+              images[index].classList.remove('active');
+              captions[index].classList.remove('active');
+              index = i;
+              images[index].classList.add('active');
+              captions[index].classList.add('active');
+            });
+          });
+        }
+      }
+
+      // Call startSlideshow when the DOM is loaded
+      document.addEventListener('DOMContentLoaded', startSlideshow);
+
+    </script>
+  </body>
+  </html>

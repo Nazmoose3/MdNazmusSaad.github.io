@@ -1,0 +1,84 @@
+/* Add your custom styles here */
+
+body {
+    padding-top: 56px; /* Adjusted for fixed navbar height */
+    margin: 0; /* Reset default margin */
+}
+
+canvas {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: -1; /* Place the canvas behind other elements */
+}
+
+.jumbotron {
+    background-color: #343a40;
+    color: #ffffff;
+    padding: 1rem;
+    text-align: center;
+    position: relative; /* Make the jumbotron a positioned container */
+    z-index: 1; /* Place the jumbotron above the canvas */
+}
+
+.container {
+    max-width: 800px;
+    z-index: 2; /* Place the container above the canvas */
+    padding-top: 20px;
+}
+
+
+
+.project-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.project-card {
+    width: calc(33.33% - 20px); /* 3 cards in the first row */
+    margin-top: 20px;
+    background-color: #f8f9fa;
+    padding: 10px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s, background-color 0.3s, color 0.3s;
+}
+
+.project-card:hover {
+    background-color: #e0eaff;
+    color: #ffffff;
+    transform: scale(1.25);
+}
+
+.project-card img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+    margin-bottom: 10px;
+}
+
+.project-card h3 {
+    color: #007bff;
+}
+
+.project-card p {
+    color: #495057;
+}
+
+.project-card a {
+    display: inline-block;
+    margin-top: 10px;
+    text-decoration: none;
+    color: #ffffff;
+    background-color: #007bff;
+    padding: 8px 16px;
+    border-radius: 4px;
+}
+
+.project-card a:hover {
+    background-color: #0056b3;
+}
+

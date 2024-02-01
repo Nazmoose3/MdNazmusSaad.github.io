@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Md Nazmus Saad Portfolio</title>
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="style.css">
+
+    
+</head>
+<body>
+    <canvas id="particleCanvas"></canvas>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+        <a class="navbar-brand" href="#">Md Nazmus Saad</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ml-auto">
+                <!-- <li class="nav-item"><a class="nav-link" href="#header">Home</a></li> -->
+                <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
+                <li class="nav-item"><a class="nav-link" href="#projects">Projects</a></li>
+                <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Header Section -->
+    <header class="jumbotron">
+        <h1 class="display-4">Welcome to My Portfolio</h1>
+        <!-- <p class="lead">Showcasing my awesome work!</p> -->
+    </header>
+
+    <!-- About Me Section -->
+    <section id="about" class="container mt-5">
+        <h2>About Me</h2>
+        <p>As a dedicated and ambitious Computer Engineering student at the University of Toronto, I am actively seeking a summer 2024 internship to leverage my diverse skill set and hands-on experience in web development, machine learning, and robotics.</p>
+    </section>
+
+    <!-- Portfolio Section -->
+    <section id="projects" class="container mt-5">
+      <h2>Projects</h2>
+      <div class="project-grid">
+          <!-- Project Card 1 -->
+          <div class="project-card">
+              <img src="WeatherApp4.png" alt="Weather App Image">
+              <h3>Weather Web App</h3>
+              <p>A web app that uses flask and the OpenWeatherMap API to show Toronto's weather.</p>
+              <p>Languages used: Python, Flask, HTML</p>
+              <a href="weather.html" class="btn btn-primary">Learn More</a>
+          </div>
+
+          <!-- Project Card 2 -->
+          <div class="project-card">
+              <img src="AiCarVisualizer2.png" alt="AI Car Image">
+              <h3>ML Car Visualizer</h3>
+              <p>AI/ML self-driving car model that uses a neural network and sensors to navigate through trafic.</p>
+              <p>Languages used: HTML, CSS, JavaScript</p>
+              <a href="aicar.html" class="btn btn-primary">Learn More</a>
+          </div>
+
+        <!-- Project Card 3 -->
+        <div class="project-card">
+            <img src="TetrisPic1.jpg" alt="Tetris Image">
+            <h3>Tetris</h3>
+            <p>This project helped me gain a better understanding of using JavaScript to create interactive games.</p>
+            <p>Languages used: HTML, CSS, JavaScript</p>
+            <a href="tetris.html" class="btn btn-primary">Learn More</a>
+        </div>
+
+        <!-- Project Card 4 -->
+        <div class="project-card">
+            <img src="basically1.png" alt="Basically Image">
+            <h3>Basically</h3>
+            <p>A React-based article summarizer web application, utilizing the Rapidfire API Summarizer AI to generate concise and efficient article summaries.</p>
+            <p>Technologies used: HTML, CSS, JavaScript, React</p>
+            <a href="basically.html" class="btn btn-primary">Learn More</a>
+        </div>
+
+        <div class="project-card">
+            <img src="Quiz2.jpg" alt="Quiz Game Image">
+            <h3>Quiz Game</h3>
+            <p>A combination of a quiz game and flappy bird created using Pygame to increase engagement in learning.</p>
+            <p>Technologies used: Python, Pygame</p>
+            <a href="quiz.html" class="btn btn-primary">Learn More</a>
+        </div>
+
+        <div class="project-card">
+            <img src="libraryManagementSystem.jpg" alt="LMS Image">
+            <h3>Library Management System</h3>
+            <p>A GUI that allows librarians to store and manage all the library records in a computerized database.</p>
+            <p>Technologies used: Java, Java Swing</p>
+            <!-- <a href="#" class="btn btn-primary">Learn More</a> -->
+        </div>
+
+        <div class="project-card">
+            <img src="HappyVsSadImageClassifier.png" alt="Screenshot from Jupyter Notebook">
+            <h3>Deep CNN Image/Sentient Classifier</h3>
+            <p>A Deep Convolutional Neural Network (CNN) Image Classifier using TensorFlow that can accurately classify images of happy and sad people within a specified dataset.</p>
+            <p>Technologies used: Python, Tensorflow, Jupyter Notebook</p>
+            <!-- <a href="#" class="btn btn-primary">Learn More</a> -->
+        </div>
+        
+
+      </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="container mt-5">
+        <h2>Contact Me</h2>
+        Email: <a href="nazmus.s333@gmail.com">nazmus.s333@gmail.com</a><br>
+        LinkedIn: <a href="https://www.linkedin.com/in/md-nazmus-saad-26b732215/">https://www.linkedin.com/in/md-nazmus-saad-26b732215/</a>
+      <p><br><br><br></p>
+
+    </section>
+  <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+
+
+    <!-- Bootstrap JS and Popper.js -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    
+    <!-- Your custom JavaScript -->
+    <script src="script.js"></script>
+  <script>
+      $(document).ready(function () {
+          // Add smooth scrolling to all links
+          $("a").on('click', function (event) {
+              if (this.hash !== "") {
+                  event.preventDefault();
+
+                  // Store hash
+                  var hash = this.hash;
+
+                  // Using jQuery's animate() method to add smooth page scroll
+                  $('html, body').animate({
+                      scrollTop: $(hash).offset().top
+                  }, 800, function () {
+                      // Add hash (#) to URL when done scrolling (default click behavior)
+                      window.location.hash = hash;
+                  });
+              }
+          });
+      });
+  </script>
+</body>
+</html>
